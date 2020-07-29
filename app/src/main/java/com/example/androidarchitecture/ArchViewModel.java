@@ -28,8 +28,6 @@ public class ArchViewModel extends ViewModel {
         if (flag) {
             flag = false;
             Observable.interval(1000, TimeUnit.MILLISECONDS)
-                    .observeOn(Schedulers.io())
-                    .subscribeOn(AndroidSchedulers.mainThread())
                     .subscribe(new Observer<Long>() {
                         @Override
                         public void onSubscribe(Disposable d) {
